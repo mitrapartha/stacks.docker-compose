@@ -1,0 +1,23 @@
+# Docker
+/.env
+/drupal-root/
+/logs/
+
+# Common: Packages
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Common: Logs and databases
+*.log
+*.sql
+*.sqlite
+
+# Common: Third-party
+/nbproject/
+/.idea/
