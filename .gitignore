@@ -1,6 +1,6 @@
 # Docker
 /.env
-# /project/
+/drupal-root/
 /logs/
 
 # Common: Packages
