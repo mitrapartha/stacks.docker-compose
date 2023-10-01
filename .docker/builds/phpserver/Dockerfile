@@ -1,4 +1,4 @@
-FROM php:8.1-apache-bullseye
+FROM php:8.2-apache-bullseye
 
 # Debian Buster configuration
 RUN apt update -y --fix-missing
@@ -54,6 +54,13 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 # install Drush
 RUN wget -P /usr/local/bin/drush https://github.com/drush-ops/drush-launcher/releases/latest/download/drush.phar && \
     chmod +x /usr/local/bin/drush
+
+# Copy Project files
+COPY ./project /var/www/html
+## uncomment additional commands as needed
+# RUN cd /var/www/html && \
+#    composer install
+#    drush cr
 
 # Install xdebug
 #RUN pecl install xdebug-2.9.2
