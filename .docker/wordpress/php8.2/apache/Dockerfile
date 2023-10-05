@@ -29,6 +29,7 @@ RUN set -ex; \
 		libpng-dev \
 		libwebp-dev \
 		libzip-dev \
+		telnet \
 	; \
 	\
 	docker-php-ext-configure gd \
