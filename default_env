@@ -1,0 +1,8 @@
+COMPOSE_PROJECT_NAME=my-work-project
+APP_EXPOSED_PORT=8000
+DB_ROOT_PASS=aku6782jsnk
+DB_PORT=3306
+DB_HOST=db
+DB_USER=test_user
+DB_PASS=test_password
+DB_NAME=test_wp
