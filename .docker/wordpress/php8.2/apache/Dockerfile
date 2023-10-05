@@ -121,7 +121,6 @@ RUN set -eux; \
 	find /etc/apache2 -type f -name '*.conf' -exec sed -ri 's/([[:space:]]*LogFormat[[:space:]]+"[^"]*)%h([^"]*")/\1%a\2/g' '{}' +
 # Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-# RUN wget -O https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar /usr/local/bin/wp && chmod +x /usr/local/bin/wp
 
 COPY project/ /usr/src/wordpress/
 VOLUME /var/www/html
@@ -129,6 +128,7 @@ VOLUME /var/www/html
 COPY .docker/wordpress/php8.2/apache/.htaccess /usr/src/wordpress/
 COPY .docker/wordpress/php8.2/apache/wp-config-docker.php /usr/src/wordpress/
 COPY .docker/wordpress/php8.2/apache/docker-entrypoint.sh /usr/local/bin/
+COPY .docker/wordpress/wp /usr/local/bin/
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["apache2-foreground"]
