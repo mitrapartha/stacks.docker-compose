@@ -1,6 +1,7 @@
 COMPOSE_PROJECT_NAME=my-work-project
-# Desired port for wordpress application
+# Desired port for wordpress and phpmyadmin application
 APP_EXPOSED_PORT=8000
+PHPMYADMIN_PORT=8001
 
 #Choose PHP version between php7.4,php8.0,php8.1,php8.2 
 PHP_VERSION=php8.2
