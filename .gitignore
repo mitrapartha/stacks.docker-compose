@@ -1,6 +1,6 @@
 # Ignore
-db_data/
-uploads/
+db_data/*
+uploads/*
 
 # Allow
 !db_data/text
