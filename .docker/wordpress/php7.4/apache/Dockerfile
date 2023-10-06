@@ -4,7 +4,7 @@
 # PLEASE DO NOT EDIT IT DIRECTLY.
 #
 
-FROM php:8.1-apache
+FROM php:7.4-apache
 
 # persistent dependencies
 RUN set -eux; \
@@ -127,9 +127,9 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 COPY project/ /usr/src/wordpress/
 VOLUME /var/www/html
 
-COPY .docker/wordpress/php8.1/apache/.htaccess /usr/src/wordpress/
-COPY .docker/wordpress/php8.1/apache/wp-config-docker.php /usr/src/wordpress/
-COPY .docker/wordpress/php8.1/apache/docker-entrypoint.sh /usr/local/bin/
+COPY .docker/wordpress/php7.4/apache/.htaccess /usr/src/wordpress/
+COPY .docker/wordpress/php7.4/apache/wp-config-docker.php /usr/src/wordpress/
+COPY .docker/wordpress/php7.4/apache/docker-entrypoint.sh /usr/local/bin/
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["apache2-foreground"]

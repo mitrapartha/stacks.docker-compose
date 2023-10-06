@@ -1,0 +1,9 @@
+# Ignore
+wp-config.php
+wp-content/uploads
+license.txt
+readme.html
+xmlrpc.php
+
+# Allow
+

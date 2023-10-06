@@ -29,6 +29,7 @@ RUN set -ex; \
 		libpng-dev \
 		libwebp-dev \
 		libzip-dev \
+		telnet \
 	; \
 	\
 	docker-php-ext-configure gd \
@@ -126,9 +127,9 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 COPY project/ /usr/src/wordpress/
 VOLUME /var/www/html
 
-COPY .docker/wordpress/php8.2/apache/.htaccess /usr/src/wordpress/
-COPY .docker/wordpress/php8.2/apache/wp-config-docker.php /usr/src/wordpress/
-COPY .docker/wordpress/php8.2/apache/docker-entrypoint.sh /usr/local/bin/
+COPY .docker/wordpress/php8.0/apache/.htaccess /usr/src/wordpress/
+COPY .docker/wordpress/php8.0/apache/wp-config-docker.php /usr/src/wordpress/
+COPY .docker/wordpress/php8.0/apache/docker-entrypoint.sh /usr/local/bin/
 
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD ["apache2-foreground"]

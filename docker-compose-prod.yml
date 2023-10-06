@@ -24,10 +24,8 @@ services:
 #    networks:
 #     - ${COMPOSE_PROJECT_NAME} 
     build:
-##    Uncomment only the PHP version you need
-#      dockerfile: .docker/wordpress/php8.0/apache/Dockerfile
-#      dockerfile: .docker/wordpress/php8.1/apache/Dockerfile
-      dockerfile: .docker/wordpress/php8.2/apache/Dockerfile
+##    Put desired PHP version in env file
+      dockerfile: .docker/wordpress/${PHP_VERSION}/apache/Dockerfile
       context: .
     ports:
       - "${APP_EXPOSED_PORT}:80"
@@ -42,6 +40,15 @@ services:
       WORDPRESS_DB_USER: ${DB_USER}
       WORDPRESS_DB_PASSWORD: ${DB_PASS}
       WORDPRESS_DB_NAME: ${DB_NAME}
+      WORDPRESS_AUTH_KEY: ${AUTH_KEY}
+      WORDPRESS_SECURE_AUTH_KEY: ${SECURE_AUTH_KEY}
+      WORDPRESS_LOGGED_IN_KEY: ${LOGGED_IN_KEY}
+      WORDPRESS_NONCE_KEY: ${NONCE_KEY}
+      WORDPRESS_AUTH_SALT: ${AUTH_SALT}
+      WORDPRESS_SECURE_AUTH_SALT: ${SECURE_AUTH_SALT}
+      WORDPRESS_LOGGED_IN_SALT: ${LOGGED_IN_SALT}
+      WORDPRESS_NONCE_SALT: ${NONCE_SALT}
+      WORDPRESS_DEBUG: ${WP_DEBUG}
 
 # volumes:
 #  db_data:

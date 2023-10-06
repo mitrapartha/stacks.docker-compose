@@ -1,8 +1,29 @@
 COMPOSE_PROJECT_NAME=my-work-project
+# Desired port for wordpress application
 APP_EXPOSED_PORT=8000
+
+#Choose PHP version between php7.4,php8.0,php8.1,php8.2 
+PHP_VERSION=php8.2
+
 DB_ROOT_PASS=aku6782jsnk
 DB_PORT=3306
 DB_HOST=db
 DB_USER=test_user
 DB_PASS=test_password
 DB_NAME=test_wp
+
+## Wordpress settings
+# get the salt from https://api.wordpress.org/secret-key/1.1/salt/
+
+AUTH_KEY='}O~{gG af-H,q|?Qst ,mqnR=KQUC/~Au2<yRUVuyI:4eYR*BzH_6][-Kk~^?ySR'
+SECURE_AUTH_KEY='Yy*N| -2:Yl4ud78@l+L//IaMst(;0iA3xL8<g`H6=?eL87=Gvx]~a~b(Qq6fUOn'
+LOGGED_IN_KEY='|S2G0#1Lw2!eJ<#{!(Z%beZtU2,p8+ zq{FzuA:aj7FnmCc+:nL.01K3gn:jy2gM'
+NONCE_KEY='*vW85b#6[bCXQJOY;z<^<4ZT{[7!x,&_>,TnxJVJKTn>BHJ|[h#k8pv:g4Mh$A}a'
+AUTH_SALT='/o5A|e</L^l!& RP@yGab3j9{hmG~gv>W?>Ru}B{-&_/k!lEK8gz-T e96]mWRFT'
+SECURE_AUTH_SALT='Eb2Pf<RSwaVtN}rV-HeqA3zLbsik.y$Amgu,+<L0qIIw$|>DRkO}zK;<)JVj~0A-'
+LOGGED_IN_SALT='|;$2e0p0v(EzPg%ZWvzhE-6{(<%L&+It>;A%`olHKwY~x*L7T+|lJ^N$e,(|2w1`'
+NONCE_SALT='I@m<BV3-Y!.[Z}N|,f2AvBPCMAT7qb,40=[S+SN`_l:7[7-$vxcAlq[K;`X 3.( '
+
+# Is debugging needed (default true)
+WP_DEBUG=true
+
